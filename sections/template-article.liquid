@@ -8,7 +8,10 @@
   <time datetime="{{ article.published_at | date: '%d-%m-%y' }}">{{ article.published_at | date: '%d-%m-%y' }}</time>
 {% endif %}
 
-<img src="{{ article.image | img_url: 'large' }}" alt="{{ article.image.alt }}" loading="lazy">
+<img
+  src="{{ article.image | img_url: 'large' }}"
+  alt="{{ article.image.alt }}"
+  loading="lazy">
 
 <div class="">{{ article.content }}</div>
 
@@ -26,6 +29,32 @@
         "id": "enable_published_date",
         "default": true,
         "label": "Display Published Date"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "article_title",
+        "name": "Title",
+        "limit": 1
+      },
+      {
+        "type": "article_author",
+        "name": "Author",
+        "limit": 1
+      },
+      {
+        "type": "article_published_date",
+        "name": "Published Date",
+        "limit": 1
+      },
+      {
+        "type": "featured_image",
+        "name": "Thumbnail",
+        "limit": 1
+      }, {
+        "type": "article_content",
+        "name": "Content",
+        "limit": 1
       }
     ]
   }
