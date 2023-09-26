@@ -77,7 +77,7 @@
           {% endfor %}
 
           {% if paginate > 1 %}
-            {{ paginate | default_pagination }}
+            {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
           {% endif %}
 
         {% endpaginate %}
