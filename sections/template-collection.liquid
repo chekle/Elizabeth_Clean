@@ -17,9 +17,9 @@
                   </div>
                 </a>
               {% endif %}
-              <span>{{ product.vendor }}</span>
-              <a href="{{ product.url }}">{{ product.title }}</a>
-              <p>{{ product.price | money }}</p>
+              <span class="text-sm">{{ product.vendor }}</span>
+              <a href="{{ product.url }}" class="text-gray-700 uppercase font-medium">{{ product.title }}</a>
+              <p class="text-gray-500">{{ product.price | money }}</p>
             </div>
           </div>
         {% else %}
