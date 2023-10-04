@@ -8,7 +8,14 @@
           <div class="w-full py-6 px-3">
             <div class="border bg-white shadow-lg rounded-lg overflow-hidden">
               {% if product.featured_image %}
-                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}">
+                <a href="{{ product.url }}">
+                  <div class="h-80 overflow-hidden">
+                    <img
+                      class="w-full h-full object-cover"
+                      src="{{ product.featured_image | img_url: 'medium' }}"
+                      alt="{{ product.featured_image.alt }}">
+                  </div>
+                </a>
               {% endif %}
               <span>{{ product.vendor }}</span>
               <a href="{{ product.url }}">{{ product.title }}</a>
