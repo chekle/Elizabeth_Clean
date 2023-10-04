@@ -1,5 +1,8 @@
 {% paginate collection.products by 12 %}
   {% for product in collection.products %}
+    {% if product.featured_image %}
+      <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}">
+    {% endif %}
     <a href="{{ product.url }}">{{ product.title }}</a>
   {% else %}
     <p>No products found</p>
